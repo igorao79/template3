@@ -15,18 +15,30 @@ import { OrderModalContainer } from '../components/order/OrderModalContainer'
 import { StatusNotificationContainer } from '../components/ui/StatusNotification'
 import { PageLoader } from '@/components/ui/PageLoader'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: "FoodDelivery - Доставка еды",
   description: "Быстрая доставка вкусной еды от лучших ресторанов города",
+  keywords: "доставка еды, заказ еды онлайн, ресторан, быстрая доставка",
+  authors: [{ name: "FoodDelivery Team" }],
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: `${process.env.NODE_ENV === 'production' ? '/template3' : ''}/favicon.ico`, sizes: 'any' },
+      { url: `${process.env.NODE_ENV === 'production' ? '/template3' : ''}/favicon.ico`, type: 'image/x-icon' },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    shortcut: `${process.env.NODE_ENV === 'production' ? '/template3' : ''}/favicon.ico`,
+    apple: `${process.env.NODE_ENV === 'production' ? '/template3' : ''}/favicon.ico`,
+  },
+  openGraph: {
+    title: "FoodDelivery - Доставка еды",
+    description: "Быстрая доставка вкусной еды от лучших ресторанов города",
+    type: "website",
   },
 };
 
@@ -37,6 +49,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="preload" href={`${process.env.NODE_ENV === 'production' ? '/template3' : ''}/images/main.jpeg`} as="image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      </head>
       <body className={inter.className}>
         <ClientWrapper>
           <PageLoader />

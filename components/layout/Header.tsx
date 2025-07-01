@@ -11,7 +11,8 @@ import {
   faBars, 
   faX, 
   faMapMarkerAlt,
-  faUtensils 
+  faUtensils,
+  faSignOutAlt 
 } from '@fortawesome/free-solid-svg-icons'
 
 import { Button } from '@/components/ui/button'
