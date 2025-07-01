@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
 
   // Оптимизация производительности
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@fortawesome/react-fontawesome', '@fortawesome/free-solid-svg-icons'],
   },
 
