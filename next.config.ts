@@ -56,8 +56,7 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/template3' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/template3' : '',
 
-  // Оптимизация CSS
-  swcMinify: true,
+  // SWC минификация включена по умолчанию в Next.js 15
 };
 
 export default nextConfig;
