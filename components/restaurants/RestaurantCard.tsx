@@ -9,6 +9,7 @@ import { faStar, faClock, faTruck, faMapMarkerAlt } from '@fortawesome/free-soli
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Restaurant, isRestaurantOpen } from '@/lib/store'
+import { getImagePath } from '@/lib/paths'
 
 interface RestaurantCardProps {
   restaurant: Restaurant
@@ -28,7 +29,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
           {/* Restaurant Image */}
           <div className="relative h-48 overflow-hidden">
             <Image
-              src={restaurant.image}
+              src={getImagePath(restaurant.image)}
               alt={restaurant.name}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
