@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:production": "NODE_ENV=production next build",
+    "build:production": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "deploy": "npm run build:production && touch out/.nojekyll",
+    "deploy": "npm run build:production",
+    "deploy:nojekyll": "npm run build:production && echo. > out/.nojekyll",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5"
